@@ -1,0 +1,12 @@
+.navbar
+  -#.container
+  .navbar-left
+    %ul.nav-list
+      %li
+        =link_to "Home", root_path
+  .navbar-right
+    .nav
+      %ul.nav-list
+        %li.user
+          =link_to "Register", new_user_path
+          =link_to "Login", new_user_path

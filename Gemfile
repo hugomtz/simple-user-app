@@ -46,7 +46,8 @@ end
 gem 'protected_attributes'
 
 # To use ActiveModel has_secure_password
-gem 'bcrypt-ruby'
+gem "bcrypt-ruby", :require => "bcrypt"
+
 
 #create safe slugs
 gem 'friendly_id'

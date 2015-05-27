@@ -1,0 +1,15 @@
+
+= form_for @user, html: {class: "basic-form"} do |f|
+  %h3
+    Register a New User
+  = f.label :name, "Name", :class => 'form-label'
+  = f.text_field :name, :place_holder => "Name"
+  = f.label :username, "Username/Email", :class => 'form-label'
+  = f.text_field :username, :place_holder => "Username"
+  = f.label :password, "Password", :class => 'form-label'
+  = f.text_field :password, :place_holder => "Password"
+  = f.label :password, "Password Confirmation", :class => 'form-label'
+  = f.text_field :password, :place_holder => "Password Confirmation"
+  .actions
+    = f.submit "Submit", :class => 'button'
+

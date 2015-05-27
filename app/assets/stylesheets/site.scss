@@ -1,0 +1,132 @@
+
+body {
+  background: rgba(162, 191, 213, 0.67);
+  color: black;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0px;
+}
+
+h2{
+  color: black;
+}
+
+.inner-container{
+  min-height: 200px;
+  margin: 50px;
+}
+/*------ ================= -----------
+--------       NAV         -----------
+-------- ================= ---------*/
+.container {
+  width: auto;
+}
+  .navbar .navbar-left > li > a {
+    height: 60px;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 60px;
+  }
+  .nav-list > li {
+    float: left;
+  }
+  .nav-list{
+    margin: 0;
+  }
+  .navbar .nav-list > li > a, .navbar .nav-list > li button {
+    display: inline-block;
+    width: auto;
+  }
+
+.nav {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.navbar .navbar-right .nav>li.user {
+  background-color: black;
+}
+
+.navbar ul>li>a, .navbar .navbar-nav>li button {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  color: #a1a3a2;
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 300;
+  text-align: left;
+  text-decoration:none;
+  &:active {
+    color:white;
+  }
+  &:hover{
+    color:white;
+  }
+}
+.navbar .navbar-left ul>li{
+  background-color: #303136;
+}
+.navbar .navbar-right ul>li{
+  background-color: black;
+}
+.navbar{
+  width:auto;
+  min-height: 58px;
+  background-color: #303136;
+}
+.navbar-left {
+  float: left!important;
+}
+.navbar-right {
+  float: right!important;
+}
+
+/*------ ================= -----------
+--------       FOOTER      -----------
+-------- ================= ---------*/
+footer {
+  background: #303136 ;
+  padding: 5px 10px 20px 10px;
+  #copyright {
+    color: gray;
+    float: none;
+    clear: both;
+    display: block;
+    font-size: 15px;
+  }
+
+}
+.copyright {
+  padding: 20px 0 0px 0;
+  margin: 0px 0 0 0;
+  font-size: 15px;
+  color: gray;
+  //border-top: 1px solid gray;
+}
+.copyright-inner {
+  clear: both;
+}
+
+
+
+/*------ ================= -----------
+--------       Buttons     -----------
+-------- ================= ---------*/
+.btn {
+  display: inline-block;
+  padding: 5px 8%;
+  text-align: center;
+  background: gray;
+  color: white;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  margin: 0;
+  transition: background-color 300ms ease-out;
+
+  &:hover, &:active {
+    color: white;
+    background: darkgray;
+    outline: 0;
+  }
+
+}
