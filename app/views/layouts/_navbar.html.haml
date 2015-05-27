@@ -7,6 +7,13 @@
   .navbar-right
     .nav
       %ul.nav-list
-        %li.user
-          =link_to "Register", new_user_path
-          =link_to "Login", new_user_path
+
+        - if current_user
+          %li.user
+            = link_to user_path, :class => 'avatar' do
+              = image_tag "user/default.png"
+              = current_user.name
+        - else
+          %li.credButtons
+            =link_to "Register", new_user_path
+            =link_to "Login", new_user_path

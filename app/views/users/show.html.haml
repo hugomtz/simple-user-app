@@ -1,0 +1,12 @@
+= stylesheet_link_tag    "users.scss"
+=# javascript_include_tag "users"
+.inner-container
+  .image
+    = image_tag "user/default.png"
+  .info
+    Name
+    = @user.name
+    %br
+    Username
+    = @user.username
+    =# @user.location if @user.location

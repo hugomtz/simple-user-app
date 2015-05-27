@@ -43,6 +43,10 @@ h2{
   list-style: none;
 }
 .navbar .navbar-right .nav>li.user {
+  color:gray;
+  background-color: black;
+}
+.navbar .navbar-right .nav>li.credButtons {
   background-color: black;
 }
 
@@ -50,6 +54,7 @@ h2{
   display: block;
   width: 100%;
   padding: 20px;
+  //top: 50%;
   color: #a1a3a2;
   font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: 300;
@@ -62,6 +67,7 @@ h2{
     color:white;
   }
 }
+
 .navbar .navbar-left ul>li{
   background-color: #303136;
 }
@@ -74,10 +80,24 @@ h2{
   background-color: #303136;
 }
 .navbar-left {
-  float: left!important;
+  float: left !important;
 }
 .navbar-right {
-  float: right!important;
+  float: right !important;
+}
+
+.user .avatar img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: -10px;
+}
+.user{
+  color:gray;
+  width: 150px;
+  max-height: 58px;
+
 }
 
 /*------ ================= -----------

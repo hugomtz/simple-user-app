@@ -22,5 +22,12 @@ module Thirteen23Js
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.assets.precompile += %w(
+      users.scss
+      site.scss
+      locations.scss
+      forms.scss
+    )
   end
 end

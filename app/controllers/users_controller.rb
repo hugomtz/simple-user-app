@@ -30,9 +30,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    if @user.save
+    if @user.save!
+      session[:user_id] = @user.id
       redirect_to @user, notice: 'User was successfully created.'
     else
+      flash.now[:alert] = "Invalid email or password"
       render action: "new"
     end
   end
@@ -51,4 +53,7 @@ class UsersController < ApplicationController
     end
   end
 
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
 end
