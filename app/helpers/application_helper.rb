@@ -8,4 +8,12 @@ module ApplicationHelper
   end
 
 
+  def meta_description(description)
+    @meta_tags ||= []
+    @meta_tags << tag(:meta, :name => 'description', :content => description)
+  end
+
+  def meta_tags
+    @meta_tags.try(:join).try(:html_safe)
+  end
 end
