@@ -1,0 +1,18 @@
+# Using Postgres.
+#
+# Ensure the Postgres gem is defined in your Gemfile
+#   gem 'pg'
+
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: thirteen23
+  username: hugo
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  database: thirteen23_test
+  host: 127.0.0.1
+
