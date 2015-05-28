@@ -169,7 +169,7 @@ footer {
 /*------ ================= -----------
 --------       Messages    -----------
 -------- ================= ---------*/
-.flash-info, .flash-alert, .flash-error, .flash-success{
+.flash-notice, .flash-alert, .flash-error, .flash-success{
   border: 1px solid;
   margin: 10px 0px;
   padding:15px 10px 15px 50px;
@@ -182,7 +182,7 @@ ul#flash-list{
   padding:0px;
 }
 
-.flash-info {
+.flash-notice {
   color: blue;
   background-color: lightblue;
 }
