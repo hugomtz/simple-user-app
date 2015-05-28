@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   respond_to :html, :json
 
   def index
-    @users = User.all
+    #@users = User.all.order(:created_at)
+    @users = User.order(:created_at).page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb

@@ -15,4 +15,7 @@ class User < ActiveRecord::Base
   friendly_id :username , :use => :slugged
 
   has_one :location
+
+  max_paginates_per 5
+
 end

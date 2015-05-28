@@ -1,7 +1,12 @@
 - page_title "Users"
 %h2
   Users
-  %ul.user-list
-  - @users.each do |u|
-    %li.item
-      = link_to u.username, user_path(u)
+%ul.user-list
+- @users.each do |u|
+  %li.item
+    = link_to u.username, user_path(u)
+
+%br/
+%br/
+= paginate @users
+= page_entries_info @users
