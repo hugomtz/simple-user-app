@@ -1,3 +1,29 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-list{
+  ul{
+
+  }
+}
+.center {
+  text-align: center;
+}
+.profileBox{
+  background-color: whitesmoke;
+  min-height: 200px;
+  margin: 0 auto;
+  padding: 50px;
+  width: 200px;
+  border:1px solid #E4E4E4;
+}
+.info{
+  text-align: center;
+  h1{
+    font-size: 20px;
+  }
+  h2{
+    font-size: 15px;
+  }
+}

@@ -28,6 +28,8 @@ module Thirteen23Js
       site.scss
       locations.scss
       forms.scss
+      application.js
+      site.js
     )
   end
 end

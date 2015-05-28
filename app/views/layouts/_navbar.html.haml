@@ -1,9 +1,11 @@
 .navbar
-  -#.container
   .navbar-left
     %ul.nav-list
       %li
         =link_to "Home", root_path
+      - if current_user
+        %li
+          =link_to "Log Out", log_out_path
   .navbar-right
     .nav
       %ul.nav-list
