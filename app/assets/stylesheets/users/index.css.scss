@@ -1,0 +1,48 @@
+.users {
+  width: 100%;
+  padding: 20px;
+}
+@media only screen and (min-width: 768px) {
+  ul.user-list {
+    list-style: none;
+    padding-left: 0px;
+    width: 80%;
+    li {
+      width: 100%;
+      height: 30px;
+      .username {
+        font-weight: bold;
+        font-size: 20px;
+        float: left;
+      }
+      .joindate {
+        font-size: 12px;
+        font-style: italic;
+        height: 100%;
+        text-align: right;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  ul.user-list {
+    list-style: none;
+    padding-left: 0px;
+    width: 100%;
+    li {
+      width: 100%;
+      height: 60px;
+      .username {
+        font-weight: bold;
+        overflow: hidden;
+        font-size: 24px;
+      }
+      .joindate {
+        font-size: 12px;
+        font-style: italic;
+        height: 100%;
+        text-align: left;
+      }
+    }
+  }
+}
