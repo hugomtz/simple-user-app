@@ -33,12 +33,11 @@ module Thirteen23Js
     config.assets.append_path Rails.root.join("app/assets/vendor")
 
     config.assets.precompile += %w(
-      users.css
       site.scss
       locations.scss
       forms.scss
-      users/index.css.scss
-      users/new.js
+      users/*.css
+      users/*.js
       application.js
       site.js
       users.js
