@@ -30,22 +30,22 @@ a{
 .container {
   width: auto;
 }
-  .navbar .navbar-left > li > a {
-    height: 60px;
-    padding-top: 0;
-    padding-bottom: 0;
-    line-height: 60px;
-  }
-  .nav-list > li {
-    float: left;
-  }
-  .nav-list{
-    margin: 0;
-  }
-  .navbar .nav-list > li > a, .navbar .nav-list > li button {
-    display: inline-block;
-    width: auto;
-  }
+.navbar .navbar-left > li > a {
+  height: 60px;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 60px;
+}
+.nav-list > li {
+  float: left;
+}
+.nav-list{
+  margin: 0;
+}
+.navbar .nav-list > li > a, .navbar .nav-list > li button {
+  display: inline-block;
+  width: auto;
+}
 
 .nav {
   margin-bottom: 0;
@@ -90,6 +90,7 @@ a{
   overflow: hidden;
   position: relative;
 }
+
 .navbar-left {
   float: left !important;
   height: 100%;
@@ -110,7 +111,16 @@ a{
   color:gray;
   max-width: 250px;
   max-height: 60px;
+  .username{
+    display: block;
+    float: right;
+  }
+}
 
+@media only screen and (max-width: 480px) {
+  .user .username {
+    display: none;
+  }
 }
 
 /*------ ================= -----------
@@ -219,4 +229,8 @@ ul#flash-list{
 
 .hidden{
   display: none;
+}
+
+hr{
+  border-top: 1px solid #6e6e6e;
 }

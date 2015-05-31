@@ -17,7 +17,8 @@
                 = image_tag 'fallback/user_avatar_thumb.png', id:'avatar_thumb'
               - else
                 = cl_image_tag current_user.avatar_image_id, id:'avatar_thumb'
-              = truncate(current_user.name, length:10)
+              .username
+                = truncate(current_user.name, length:10)
         - else
           %li.credButtons
             =link_to "Register", new_user_path

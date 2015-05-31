@@ -37,6 +37,8 @@ module Thirteen23Js
       site.scss
       locations.scss
       forms.scss
+      index.css.scss
+      users/new.js
       application.js
       site.js
       users.js

@@ -1,11 +1,16 @@
+= stylesheet_link_tag('users/index')
 - page_title "Users"
 %h2
   Users
-%ul.user-list
-- @users.each do |u|
-  %li.item
-    = link_to u.username, user_path(u)
-
+  .users
+    %ul.user-list
+      - @users.each do |u|
+        %li.item
+          .username
+            = link_to u.username, user_path(u)
+          .joindate
+            = u.created_at.strftime("Joined on %m/%d/%Y at %H:%M:%S")
+        %hr
 %br/
 %br/
 = paginate @users
