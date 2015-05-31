@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  VALID_USERNAME_REGEX = /\A[a-z0-9\-_]+(@[a-z0-9\-_]+\.[a-zA-Z0-9-.]+)?\z/
+  VALID_USERNAME_REGEX = /\A[a-z0-9\-_@\.]+\z/
 
   attr_accessible :name, :username, :password, :password_confirmation, :avatar_image_id, :location_attributes
   validates_uniqueness_of :username
