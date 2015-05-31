@@ -1,3 +1,4 @@
+$body = $("body");
 
 function dismissAlert(){
     $(".alert").animate({opacity:'0'}, 1500);

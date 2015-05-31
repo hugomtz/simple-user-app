@@ -17,6 +17,7 @@
   padding: 50px;
   width: 200px;
   border:1px solid #E4E4E4;
+  position: relative;
 }
 .info{
   text-align: center;
@@ -27,4 +28,19 @@
   h2{
     font-size: 15px;
   }
+}
+
+.ajax-loader{
+  position:absolute;
+  display: none;
+  z-index:    1000;
+  top:        0;
+  left:       0;
+  height:     100%;
+  width:      100%;
+  background: rgba( 255, 255, 255, .8 )
+  50% 50%
+  asset-url('animations/ajax-loader.gif')
+
+  no-repeat;
 }
