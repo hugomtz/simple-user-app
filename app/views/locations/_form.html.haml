@@ -1,0 +1,9 @@
+= form_for @location do |f|
+  = f.label :city, "City", :class => 'form-label required'
+  = f.text_field :city
+  = f.label :state, "State", :class => 'form-label required'
+  = f.text_field :state
+  = f.label :country, "Country", :class => 'form-label required'
+  = f.text_field :country
+  .actions
+    = f.submit "Submit", :class => 'button'

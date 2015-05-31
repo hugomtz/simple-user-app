@@ -16,4 +16,5 @@
       = @user.name
     %h2
       = @user.username
-      =# @user.location if @user.location
+    %h2
+      = @user.location.to_s if @user.location

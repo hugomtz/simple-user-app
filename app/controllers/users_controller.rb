@@ -28,7 +28,10 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-
+    if cookies[:location]
+      c = JSON.parse cookies[:location]
+      @user.build_location(c) if c.present?
+    end
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user, status: :created, location: @user }
@@ -49,7 +52,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       session[:user_id] = @user.id
-      redirect_to @user, notice: 'User was successfully created.'
+      redirect_to @user
     else
       flash.now[:error] = flatten_model_errors(@user.errors)
       render action: "new"
@@ -62,7 +65,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(params[:user])
         Cloudinary::Uploader.destroy(image)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user}
         format.json { head :ok }
       else
         format.html { render action: "edit" }

@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :flatten_model_errors
   helper :all
+  before_action :geocode_user
+
 
   private
   def current_user
@@ -33,6 +35,29 @@ class ApplicationController < ActionController::Base
     end
 
     message_array
+  end
+
+  def geocode_user
+    # we don't need to do this on every request
+    if !cookies.signed[:geocode_check]
+      cookies.signed[:geocode_check] = {
+          :value => true,
+          :expires => 60.minutes.from_now.utc
+      }
+      geocode = geocode_from_ip
+      if geocode
+        cookies[:location] = JSON.generate({
+          city: geocode.city_name,
+          state: geocode.region_name,
+          country: geocode.country_name
+        })
+      end
+    end
+  end
+
+  def geocode_from_ip
+    ip = Rails.env.development? ? "99.106.119.107" : request.ip
+    @ip_geocode ||= GeoIP.new('db/GeoLiteCity.dat').city(ip)
   end
 
 end

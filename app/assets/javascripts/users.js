@@ -61,4 +61,3 @@ $(document).ajaxStart(function() {
 }).ajaxComplete(function() {
     $('.ajax-loader').hide();
 });
-

@@ -1,0 +1,24 @@
+= form_for @user, html: {class: "basic-form"} do |f|
+  %h3
+    Register a New User
+  = f.label :name, "Name", :class => 'form-label required'
+  = f.text_field :name
+  = f.label :username, "Username/Email", :class => 'form-label required'
+  = f.text_field :username
+  = f.label :password, "Password", :class => 'form-label required'
+  = f.password_field :password
+  = f.label :password, "Password Confirmation", :class => 'form-label required'
+  = f.password_field :password_confirmation
+  - if @user.location
+    .current_location
+      = label_tag "Location"
+      %b= @user.location.to_s
+      = link_to "edit", "#", :id => "show_location_form"
+    .location_form.hidden
+      = render('location_form', f: f)
+  - else
+    .location_form
+      = render('location_form', f: f)
+
+  .actions
+    = f.submit "Submit", :class => 'button'

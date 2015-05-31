@@ -1,15 +1,4 @@
+= javascript_include_tag('users/new')
 = render_simple_flashes
-= form_for @user, html: {class: "basic-form"} do |f|
-  %h3
-    Register a New User
-  = f.label :name, "Name", :class => 'form-label'
-  = f.text_field :name
-  = f.label :username, "Username/Email", :class => 'form-label'
-  = f.text_field :username
-  = f.label :password, "Password", :class => 'form-label'
-  = f.password_field :password
-  = f.label :password, "Password Confirmation", :class => 'form-label'
-  = f.password_field :password_confirmation
-  .actions
-    = f.submit "Submit", :class => 'button'
+= render 'form'
 

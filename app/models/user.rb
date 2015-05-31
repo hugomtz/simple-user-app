@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   VALID_USERNAME_REGEX = /\A[a-z0-9\-_]+\z/
 
-  attr_accessible :name, :username, :password, :password_confirmation, :avatar_image_id
+  attr_accessible :name, :username, :password, :password_confirmation, :avatar_image_id, :location_attributes
   validates_uniqueness_of :username
   validates :name, presence: true, length: { minimum: 3, maximum: 30 }
   validates :username, presence: true, length: { minimum: 3, maximum: 30 }
@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   friendly_id :username , :use => :slugged
 
   has_one :location
+  accepts_nested_attributes_for :location
 
   max_paginates_per 5
 

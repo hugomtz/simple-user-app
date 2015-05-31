@@ -21,12 +21,13 @@
 }
 .info{
   text-align: center;
-  line-height: 40%;
   h1{
     font-size: 20px;
+    margin: 0px;
   }
   h2{
     font-size: 15px;
+    margin: 0px;
   }
 }
 
@@ -43,4 +44,8 @@
   asset-url('animations/ajax-loader.gif')
 
   no-repeat;
+}
+
+.location_form {
+
 }

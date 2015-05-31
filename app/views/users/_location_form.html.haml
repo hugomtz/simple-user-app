@@ -1,0 +1,7 @@
+= f.fields_for :location do |ff|
+  = ff.label :city, "City", :class => 'form-label'
+  = ff.text_field :city
+  = ff.label :state, "State", :class => 'form-label'
+  = ff.text_field :state
+  = ff.label :country, "Country", :class => 'form-label'
+  = ff.text_field :country

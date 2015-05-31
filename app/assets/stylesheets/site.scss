@@ -212,3 +212,11 @@ ul#flash-list{
   }
 
 }
+
+.form-label.required:before{
+  content: " *";
+}
+
+.hidden{
+  display: none;
+}
