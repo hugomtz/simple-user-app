@@ -73,6 +73,18 @@ gem 'pg'
 # respond_to
 gem 'responders', '~> 2.0'
 
+# file management
+gem 'paperclip'
 
 
+#asset pipeline
+group :production do
+  gem "rails_12factor"
+end
 
+gem 'cloudinary'
+
+gem 'dotenv-rails', :groups => [:development]
+
+#javascript/rails communication
+gem 'gon'

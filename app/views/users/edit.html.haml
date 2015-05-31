@@ -1,12 +1,13 @@
 = stylesheet_link_tag('users')
 =javascript_include_tag('users.js')
-= cloudinary_js_config
 .profileBox
   .image
     - if @user.avatar_image_id.blank?
       = image_tag 'fallback/user_avatar_medium.png', size: "200x200", id: "user_photo"
     - else
       = cl_image_tag @user.avatar_image_id, size: "200x200", id: "user_photo"
+  = render 'image_form'
+
 
   .info
     %h1

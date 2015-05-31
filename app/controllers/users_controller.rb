@@ -12,9 +12,18 @@ class UsersController < ApplicationController
   end
 
   def show
-    #@user = User.find(params[:id])
     @user = User.friendly.find(params[:id])
-    respond_with @user
+    if @user == current_user
+      @timestamp = Time.now.to_i
+      @transformation = User.image_transformation
+      @signature = User.generate_cloudinary_signature(@timestamp)
+      @api_key = ENV['CLOUDINARY_KEY']
+      gon.url = Cloudinary::Utils.cloudinary_api_url
+      gon.user = @user
+      render action: "edit"
+    else
+      respond_with @user
+    end
   end
 
   def new
@@ -27,7 +36,13 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
+    @timestamp = Time.now.to_i
+    @transformation = User.image_transformation
+    @signature = User.generate_cloudinary_signature(@timestamp)
+    @api_key = ENV['CLOUDINARY_KEY']
+    gon.url = Cloudinary::Utils.cloudinary_api_url
+    gon.user = @user
   end
 
   def create
@@ -42,10 +57,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-
+    @user = User.friendly.find(params[:id])
+    image = @user.avatar_image_id if params[:user] and params[:user][:avatar_image_id]
     respond_to do |format|
       if @user.update_attributes(params[:user])
+        Cloudinary::Uploader.destroy(image)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { head :ok }
       else

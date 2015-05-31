@@ -1,0 +1,10 @@
+= form_for @user, html: {class: "upload_photo_form"} do |f|
+  %br/
+  .center
+    = file_field_tag "file", hidden: true
+    = hidden_field_tag "signature", @signature
+    = hidden_field_tag "api_key", @api_key
+    = hidden_field_tag "timestamp", @timestamp
+    = hidden_field_tag "transformation", @transformation
+    = hidden_field_tag "format", "png"
+    = submit_tag 'Update Photo', :class => 'btn', id: "upload-photo-button"

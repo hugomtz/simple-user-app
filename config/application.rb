@@ -23,13 +23,23 @@ module Thirteen23Js
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
+    config.assets.initialize_on_precompile = false
+
+    # Configure sensitive parameters which will be filtered from the log file.
+    config.filter_parameters += [:password]
+
+    # Enable the asset pipeline
+    config.assets.enabled = true
+    config.assets.append_path Rails.root.join("app/assets/vendor")
+
     config.assets.precompile += %w(
-      users.scss
+      users.css
       site.scss
       locations.scss
       forms.scss
       application.js
       site.js
+      users.js
     )
   end
 end

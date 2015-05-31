@@ -11,8 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.ui.widget.js
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require site
+//= require cloudinary
 
