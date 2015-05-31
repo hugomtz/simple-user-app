@@ -1,5 +1,5 @@
 = stylesheet_link_tag('users/show')
-
+- page_title @user.username
 .profileBox
   .image
     - if @user.avatar_image_id.blank?
