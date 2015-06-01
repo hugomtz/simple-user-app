@@ -26,14 +26,14 @@ $(document).ready(function() {
                 type: 'POST',
                 data: formData,
                 success: completeHandler = function(data) {
+                    $('#user_photo').attr("src",data.url);
+                    $('#avatar_thumb').attr("src",data.url);
                     $.ajax({
                         url: "/"+gon.user.slug+".json",
                         type: 'PUT',
                         data: { authenticity_token: $(".upload_photo_form")[0].authenticity_token.value,
                             "user[avatar_image_id]": data.public_id},
                         success: completeHandler = function(data) {
-                            $('#user_photo').attr("src",data.url);
-                            $('#avatar_thumb').attr("src",data.url);
                         }
                     });
 
